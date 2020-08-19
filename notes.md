@@ -109,6 +109,54 @@ module.exports = new GraphQLSchema({
 
 This exposes those methods (query and mutation)
 
+## GraphQL Calls
+
+Returning a list of pets for the owner
+
+```
+{
+  owner(id: 1){
+    id
+    name
+    age
+    age
+    pets{
+      name
+    }
+  }
+}
+```
+
+Returning a list of owners
+
+```
+{
+  owners{
+    id
+    name
+    age
+    age
+    pets{
+      name
+    }
+  }
+}
+```
+
+Return only info about owner
+
+```
+{
+  owner(id: 1){
+    id
+    name
+    age
+  }
+}
+```
+
+
+
 ## Resources
 
 1. [Setup Graphql Node Server](https://gist.github.com/jwill9999/c1fcd9ca2d80e33515f22b509526f696)
