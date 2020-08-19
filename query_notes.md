@@ -155,7 +155,62 @@ Return only info about owner
 }
 ```
 
+## Refactor
 
+**Static:** defines static method for a class; aren't called on instances of the class (class method); often functions to create or clone objects
+
+```
+class ClassWithStaticMethod {
+  static staticMethod() {
+    return 'static method has been called.';
+  }
+}
+
+console.log(ClassWithStaticMethod.staticMethod());
+// expected output: "static method has been called."
+```
+
+**module.exports**
+
+The CommonJS (CJS) format is used in Node.js and uses require and module.exports to define dependencies and modules. The npm ecosystem is built upon this format.
+
+- when you have a module that exports just one thing
+
+```
+//user.js
+class User {
+  constructor(name, age, email) {
+    this.name = name;
+    this.age = age;
+    this.email = email;
+  }
+
+  getUserStats() {
+    return `
+      Name: ${this.name}
+      Age: ${this.age}
+      Email: ${this.email}
+    `;
+  }
+}
+
+module.exports = User;
+---------------------
+//index.js
+
+const User = require('./user');
+const jim = new User('Jim', 37, 'jim@example.com');
+
+console.log(jim.getUserStats());
+----------------------
+//log
+
+Name: Jim
+Age: 37
+Email: jim@example.com
+```
+
+- after refactor and creating methods, we can just call on the methods in our schema
 
 ## Resources
 
@@ -164,3 +219,7 @@ Return only info about owner
 2. [GraphQL Lesson Queries](https://github.com/melatran/backend-curriculum-site/blob/gh-pages/module4/lessons/pets_gql_walkthrough_queries.md)
 
 3. [GraphQL Lesson Mutations](https://github.com/melatran/backend-curriculum-site/blob/gh-pages/module4/lessons/pets_gql_walkthrough_mutations.md)
+
+4. [Static](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/static)
+
+5. [Module Exports](https://www.sitepoint.com/understanding-module-exports-exports-node-js/)
