@@ -9,7 +9,6 @@ const schema = require('./lib/schema/schema')
 //update the object passed to graphqlHTTP()
 app.use('/graphql-pets', graphqlHTTP({
   schema: schema,
-  //graphql allows us to query from browser
   graphiql: true
 }))
 
