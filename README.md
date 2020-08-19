@@ -20,4 +20,6 @@ CREATE DATABASE furbabies;
 
 * Seed database `knex seed:run`
 
-Use this [walkthrough](https://backend.turing.io/module4/lessons/pets_gql_walkthrough) to get started.
+* Run GraphQL `node index.js`
+
+* Local `localhost:3001/graphql-pets`
