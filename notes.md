@@ -98,6 +98,17 @@ const RootQuery = new GraphQLObjectType({
 });
 ```
 
+## Exposing the Schema
+
+```
+module.exports = new GraphQLSchema({
+    query: RootQuery,
+    mutation: Mutation
+});
+```
+
+This exposes those methods (query and mutation)
+
 ## Resources
 
 1. [Setup Graphql Node Server](https://gist.github.com/jwill9999/c1fcd9ca2d80e33515f22b509526f696)
